@@ -185,7 +185,9 @@ the specified directory name.  Passes the directory through
                         (concat octopress-directory (replace-regexp-in-string "\n" "" (substring rake-output (match-end 0))))
                       nil)))
     (if file-name
-        (find-file file-name)
+        (if (string= "" octomacs-alternate-postdir)
+            (find-file file-name)
+          (find-file (octomacs-rename-post file-name)))
       (message (concat "Unable to create post: " rake-output)))))
 
 (provide 'octomacs)
