@@ -162,6 +162,16 @@ the specified directory name.  Passes the directory through
   (let ((default-directory (file-name-as-directory (expand-file-name directory))))
     (shell-command-to-string (format "rake %s" (octomacs-format-rake-task-with-args task arguments)))))
 
+(defun octomacs-parent-directory (dir)
+  (unless (equal "/" dir)
+    (file-name-directory (directory-file-name dir))))
+
+(defun octomacs-rename-post (file-name)
+  (setq org-posts-directory (concat (octomacs-parent-directory (file-name-directory file-name)) octomacs-alternate-postdir))
+  (setq new-file-name (concat (file-name-as-directory org-posts-directory) (file-name-nondirectory file-name)))
+  (rename-file file-name new-file-name)
+  new-file-name)
+
 ;;; Public interface ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;###autoload
