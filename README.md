@@ -27,7 +27,7 @@ pain.
 
 Octomacs can be configured to make using frequently visited Octopress
 directories easier by adding them to `octomacs-workdir-alist`
-(configuratble via the `octomacs` group).  Directories added to this
+(configurable via the `octomacs` group).  Directories added to this
 alist will be available for completion using the specified instance
 name, when asked for an Octopress project.
 
