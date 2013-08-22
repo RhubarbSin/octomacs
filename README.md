@@ -31,6 +31,10 @@ directories easier by adding them to `octomacs-workdir-alist`
 alist will be available for completion using the specified instance
 name, when asked for an Octopress project.
 
+To support [orgmode-octopress][], Octomacs will create new
+[Org-mode][] posts in the directory specified by
+`octomacs-alternate-postdir` if that variable is not empty.
+
 # Supported features
 
 * `octomacs-new-post` This interactive function will prompt for which
@@ -56,3 +60,5 @@ name, when asked for an Octopress project.
 [Emacs]: http://www.gnu.org/software/emacs/ "Emacs site"
 [Marmalade]: http://marmalade-repo.org/ "Marmalade Repo site"
 [Marmalade-listing]: http://marmalade-repo.org/packages/octomacs "Octomacs on Marmalade"
+[orgmode-octopress]: https://github.com/craftkiller/orgmode-octopress
+[Org-mode]: http://orgmode.org/
