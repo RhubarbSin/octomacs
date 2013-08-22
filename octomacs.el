@@ -69,6 +69,16 @@
   :type '(repeat (cons (string :tag "Instance name")
                        (file   :tag "Location"))))
 
+(defcustom octomacs-alternate-postdir ""
+  "*The location of the directory for new posts.
+If specified, new posts will be created in this directory;
+otherwise they will be created as specified by `posts_dir' in the
+Rakefile. The location is relative to the the parent directory of
+`posts_dir', which by default is the Octopress sources
+directory."
+  :group 'octomacs
+  :type 'string)
+
 ;;; Commands ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar octomacs-workdir-history nil
